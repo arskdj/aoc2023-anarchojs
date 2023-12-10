@@ -20,7 +20,7 @@ Array.prototype.min = function() {
 	return this.reduce((a, b) => a < b ? a : b, Number.MAX_SAFE_INTEGER)
 }
 
-export function getFile(filename) {
-	return readFileSync(filename, 'utf-8')
-}
+export const getFile = (filename) => readFileSync(filename, 'utf-8')
 
+export const range = (start, stop, step = 1) =>
+	Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
